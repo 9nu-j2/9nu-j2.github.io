@@ -1,9 +1,9 @@
-import * as React from 'react'
+import React, { FunctionComponent } from 'react'
 import type { HeadProps } from "gatsby"
 import { PageProps } from "gatsby"
 
 
-const MainPage = ({ data }: PageProps) => {
+const MainPage: FunctionComponent = function () {
     return (
         <main>
             <h1>About Me</h1>

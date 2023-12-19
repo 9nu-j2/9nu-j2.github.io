@@ -1,6 +1,7 @@
-import * as React from "react"
+import React, { FunctionComponent } from 'react'
 import type { HeadProps } from "gatsby"
 import { graphql, PageProps } from "gatsby"
+import HeaderTemplate from "../Components/Templates/Home.Template"
 
 type DataProps = {
   site: {
@@ -12,13 +13,10 @@ type DataProps = {
   }
 }
 
-const IndexRoute = ({ data: { site } }: PageProps<DataProps>) => {
+const IndexRoute: FunctionComponent<DataProps> = function ({ site }) {
   return (
     <main>
-      <h1>{site.siteMetadata.title}</h1>
-      <p>Hello</p>
-      <p>{site.siteMetadata.description}</p>
-      <p>{site.siteMetadata.author}</p>
+      <HeaderTemplate site={site}></HeaderTemplate>
     </main>
   )
 }

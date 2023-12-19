@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { FunctionComponent } from 'react'
 import { Link, HeadFC, PageProps } from "gatsby"
 
 const pageStyles = {
@@ -23,7 +23,7 @@ const codeStyles = {
   borderRadius: 4,
 }
 
-const NotFoundPage: React.FC<PageProps> = () => {
+const NotFoundPage: FunctionComponent<PageProps> = function () {
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>Page not found</h1>
