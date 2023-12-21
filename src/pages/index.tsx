@@ -1,7 +1,7 @@
 import React from 'react'
 import type { HeadProps } from "gatsby"
-import { PageProps } from "gatsby"
-import HeaderTemplate from "../Components/Templates/Home.Template"
+import { PageProps, graphql } from "gatsby"
+import HeaderTemplate from "../Components/Templates/Home.Header"
 import Footer from '../Components/Organisms/Footer';
 import { DataProps } from 'Types/Types'
 
@@ -24,3 +24,14 @@ export function Head(props: HeadProps<DataProps>) {
   )
 }
 
+export const query = graphql`
+{
+    site {
+        siteMetadata {
+            title
+            description
+            author
+        }
+    }
+}
+`

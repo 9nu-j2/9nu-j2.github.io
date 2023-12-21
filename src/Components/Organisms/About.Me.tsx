@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components';
-import ProfilePic from '../Atoms/ProfilePhoto';
+import ProfilePic from '../Atoms/ProfileImage';
 import Context from '../Molecules/Profile.Context';
 
 type MeProps = {

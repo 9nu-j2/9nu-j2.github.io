@@ -2,15 +2,18 @@ import React from 'react'
 import type { HeadProps } from "gatsby"
 import { PageProps, graphql } from "gatsby"
 import { DataProps } from 'Types/Types'
-
+import PostHeader from '../Components/Templates/Post.Header'
+import Footer from '../Components/Organisms/Footer'
 
 const MainPage = ({ data: { site: {
-    siteMetadata
+    siteMetadata: {
+        title
+    }
 } } }: PageProps<DataProps>) => {
     return (
         <main>
-            <h1>About Me</h1>
-            <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
+            <PostHeader title={title}></PostHeader>
+            <Footer></Footer>
         </main>
     )
 }
