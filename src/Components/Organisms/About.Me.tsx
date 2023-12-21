@@ -3,10 +3,15 @@ import styled from 'styled-components';
 import ProfilePic from '../Atoms/ProfilePhoto';
 import Context from '../Molecules/Profile.Context';
 
-const Introduction: FunctionComponent = function () {
+type MeProps = {
+    description: string,
+    author: string,
+}
+
+const Introduction: FunctionComponent<MeProps> = function ({ description, author }) {
     return <IntroBox>
         <ProfilePic></ProfilePic>
-        <Context></Context>
+        <Context description={description} author={author}></Context>
     </IntroBox>
 }
 

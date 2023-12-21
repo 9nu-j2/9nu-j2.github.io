@@ -2,12 +2,13 @@ import React, { FunctionComponent } from 'react'
 import { styled } from 'styled-components';
 import Nav from '../Organisms/Navbar';
 import Introduction from '../Organisms/About.Me';
+import { MetaProps } from 'Types/Types';
 
-const HeaderTemplate: FunctionComponent = function () {
+const HeaderTemplate: FunctionComponent<MetaProps> = function ({ title, description, author }) {
     return (
         <Header>
-            <Nav></Nav>
-            <Introduction></Introduction>
+            <Nav title={title}></Nav>
+            <Introduction description={description} author={author}></Introduction>
         </Header>
     )
 }

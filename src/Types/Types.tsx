@@ -1,9 +1,11 @@
 export type DataProps = {
     site: {
-        siteMetadata: {
-            title: string,
-            description: string,
-            author: string,
-        }
+        siteMetadata: MetaProps
     }
+}
+
+export type MetaProps = {
+    title: string,
+    description: string,
+    author: string,
 }

@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import Title from '../Atoms/Blog.title';
 import Categories from '../Molecules/Categories';
 
-const Nav: FunctionComponent = function () {
+type TitleData = {
+    title: string
+}
+
+const Nav: FunctionComponent<TitleData> = function ({ title }) {
     return (
-        <Navi>
-            <Title></Title>
+        <NavStyle>
+            <Title title={title}></Title>
             <Categories></Categories>
-        </Navi>
+        </NavStyle>
     )
 }
 
-const Navi = styled.div`
+const NavStyle = styled.div`
     display: flex;
     justify-content: space-between;
     width: 950px;

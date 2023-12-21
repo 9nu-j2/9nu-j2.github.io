@@ -1,9 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components';
 
-const ProfileName: FunctionComponent = function () {
+type MeProps = {
+    author: string,
+}
+
+const ProfileName: FunctionComponent<MeProps> = function ({ author }) {
     return (
-        <ProfileStyle></ProfileStyle>
+        <ProfileStyle>{author}</ProfileStyle>
     )
 }
 

@@ -4,7 +4,9 @@ import { PageProps, graphql } from "gatsby"
 import { DataProps } from 'Types/Types'
 
 
-const MainPage = ({ data: { site } }: PageProps<DataProps>) => {
+const MainPage = ({ data: { site: {
+    siteMetadata
+} } }: PageProps<DataProps>) => {
     return (
         <main>
             <h1>About Me</h1>

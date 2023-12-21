@@ -1,16 +1,18 @@
 import React, { FunctionComponent } from 'react'
-import { PageProps, graphql } from "gatsby"
 import styled from 'styled-components';
-import { DataProps } from 'Types/Types';
 
-const ProfileDescription: FunctionComponent = () => {
+type MeProps = {
+    description: string,
+}
+
+const ProfileDescription: FunctionComponent<MeProps> = ({ description }) => {
     return (
-        <ProfileStyle></ProfileStyle>
+        <ProfileStyle>{description}</ProfileStyle>
     )
 }
 
 const ProfileStyle = styled.div`
-    height: 40px;
+    height: 45px;
     font-size: 16px;
     display: flex;
     flex-direction: column;

@@ -4,16 +4,21 @@ import ProfileName from '../Atoms/ProfileName';
 import ProfileDescription from '../Atoms/ProfileDescription';
 import ProfileIcons from '../Atoms/ProfileIcons';
 
-const Context: FunctionComponent = function () {
+type MeProps = {
+    description: string,
+    author: string,
+}
+
+const Context: FunctionComponent<MeProps> = function ({ description, author }) {
     return <ContextStyle>
-        <ProfileName></ProfileName>
-        <ProfileDescription></ProfileDescription>
+        <ProfileName author={author}></ProfileName>
+        <ProfileDescription description={description}></ProfileDescription>
         <ProfileIcons></ProfileIcons>
     </ContextStyle>
 }
 
 const ContextStyle = styled.div`
-    width: 300px;
+    width: 400px;
     height: 140px;
     display: flex;
     flex-direction: column;
