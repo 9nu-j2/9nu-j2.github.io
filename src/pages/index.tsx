@@ -1,22 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import type { HeadProps } from "gatsby"
-import { graphql, PageProps } from "gatsby"
+import { PageProps, graphql } from "gatsby"
 import HeaderTemplate from "../Components/Templates/Home.Template"
+import { DataProps } from 'Types/Types'
 
-type DataProps = {
-  site: {
-    siteMetadata: {
-      title: string,
-      description: string,
-      author: string,
-    }
-  }
-}
-
-const IndexRoute: FunctionComponent<DataProps> = function ({ site }) {
+const IndexRoute = ({ data: { site: { siteMetadata: { title, description, author } } } }: PageProps<DataProps>) => {
   return (
     <main>
-      <HeaderTemplate site={site}></HeaderTemplate>
+      <HeaderTemplate></HeaderTemplate>
     </main>
   )
 }

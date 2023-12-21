@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import type { HeadProps } from "gatsby"
-import { PageProps } from "gatsby"
+import { PageProps, graphql } from "gatsby"
+import { DataProps } from 'Types/Types'
 
 
-const MainPage: FunctionComponent = function () {
+const MainPage = ({ data: { site } }: PageProps<DataProps>) => {
     return (
         <main>
             <h1>About Me</h1>
@@ -14,4 +15,20 @@ const MainPage: FunctionComponent = function () {
 
 export default MainPage
 
-export const Head = () => <title>About Me</title>
+export function Head(props: HeadProps<DataProps>) {
+    return (
+        <title>{props.data.site.siteMetadata.author}</title>
+    )
+}
+
+export const query = graphql`
+{
+    site {
+        siteMetadata {
+            title
+            description
+            author
+        }
+    }
+}
+`
