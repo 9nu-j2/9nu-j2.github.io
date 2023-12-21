@@ -1,19 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components';
 
-type DataProps = {
-    site: {
-        siteMetadata: {
-            title: string,
-            description: string,
-            author: string,
-        }
-    }
-}
-
-const ProfileName: FunctionComponent<DataProps> = function ({ site }) {
+const ProfileName: FunctionComponent = function () {
     return (
-        <ProfileStyle>{site.siteMetadata.author}</ProfileStyle>
+        <ProfileStyle></ProfileStyle>
     )
 }
 

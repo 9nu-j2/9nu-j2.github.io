@@ -3,21 +3,11 @@ import { styled } from 'styled-components';
 import Nav from '../Organisms/Navbar';
 import Introduction from '../Organisms/About.Me';
 
-type DataProps = {
-    site: {
-        siteMetadata: {
-            title: string,
-            description: string,
-            author: string,
-        }
-    }
-}
-
-const HeaderTemplate: FunctionComponent<DataProps> = function ({ site }) {
+const HeaderTemplate: FunctionComponent = function () {
     return (
         <Header>
             <Nav></Nav>
-            <Introduction site={site}></Introduction>
+            <Introduction></Introduction>
         </Header>
     )
 }

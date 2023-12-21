@@ -1,19 +1,11 @@
 import React, { FunctionComponent } from 'react'
+import { PageProps, graphql } from "gatsby"
 import styled from 'styled-components';
+import { DataProps } from 'Types/Types';
 
-type DataProps = {
-    site: {
-        siteMetadata: {
-            title: string,
-            description: string,
-            author: string,
-        }
-    }
-}
-
-const ProfileDescription: FunctionComponent<DataProps> = function ({ site }) {
+const ProfileDescription: FunctionComponent = () => {
     return (
-        <ProfileStyle>{site.siteMetadata.description}</ProfileStyle>
+        <ProfileStyle></ProfileStyle>
     )
 }
 

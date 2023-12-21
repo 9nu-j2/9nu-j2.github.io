@@ -4,20 +4,10 @@ import ProfileName from '../Atoms/ProfileName';
 import ProfileDescription from '../Atoms/ProfileDescription';
 import ProfileIcons from '../Atoms/ProfileIcons';
 
-type DataProps = {
-    site: {
-        siteMetadata: {
-            title: string,
-            description: string,
-            author: string,
-        }
-    }
-}
-
-const Context: FunctionComponent<DataProps> = function ({ site }) {
+const Context: FunctionComponent = function () {
     return <ContextStyle>
-        <ProfileName site={site}></ProfileName>
-        <ProfileDescription site={site}></ProfileDescription>
+        <ProfileName></ProfileName>
+        <ProfileDescription></ProfileDescription>
         <ProfileIcons></ProfileIcons>
     </ContextStyle>
 }
