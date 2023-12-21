@@ -1,13 +1,17 @@
 import React from 'react'
 import type { HeadProps } from "gatsby"
-import { PageProps, graphql } from "gatsby"
+import { PageProps } from "gatsby"
 import HeaderTemplate from "../Components/Templates/Home.Template"
+import Footer from '../Components/Organisms/Footer';
 import { DataProps } from 'Types/Types'
 
-const IndexRoute = ({ data: { site: { siteMetadata: { title, description, author } } } }: PageProps<DataProps>) => {
+const IndexRoute = ({ data: { site: { siteMetadata: {
+  title, description, author
+} } } }: PageProps<DataProps>) => {
   return (
     <main>
-      <HeaderTemplate></HeaderTemplate>
+      <HeaderTemplate title={title} description={description} author={author}></HeaderTemplate>
+      <Footer></Footer>
     </main>
   )
 }
@@ -20,14 +24,3 @@ export function Head(props: HeadProps<DataProps>) {
   )
 }
 
-export const query = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`
