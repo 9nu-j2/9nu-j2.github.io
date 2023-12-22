@@ -1,6 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react'
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 type TitleProps = {
     children: ReactNode;
@@ -11,17 +10,29 @@ type TitleProps = {
 const Menu: FunctionComponent<TitleProps> = ({ context, link }) => {
     return (
         <MenuItem>
-            <Link to={`${link}`}>{context}</Link>
+            <FontStyle href={`${link}`}>{context}</FontStyle>
         </MenuItem >
     )
 }
 
 const MenuItem = styled.div`
-    width: 60px;
+    width: 70px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+`
+
+const FontStyle = styled.a`
+    font-weight: 700;
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    text-shadow: 0 0 0.3rem black;
+
+    &:hover {
+        opacity: 1;
+    }
 `
 
 export default Menu
