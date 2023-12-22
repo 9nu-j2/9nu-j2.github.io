@@ -3,7 +3,7 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `아직미정`,
-    description: `문제를 해결하는게 재밌는 사람입니다. 이를 기록으로 남깁니다.`,
+    description: `문제를 해결하는게 재밌어서, 재밌던 기억들을 남깁니다.`,
     author: `JUN9`,
     siteUrl: `https://9nu-j2.github.io`,
   },
@@ -27,6 +27,15 @@ const config: GatsbyConfig = {
         path: `${__dirname}/blog`,
       },
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };
 
