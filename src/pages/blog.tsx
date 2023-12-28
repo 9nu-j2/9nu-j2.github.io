@@ -2,10 +2,13 @@ import * as React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
 type BlogProps = {
-    allFile: {
+    allMdx: {
         nodes: {
-            name: {
-
+            frontmatter: {
+                title: string,
+                datePublished: string,
+                author: string,
+                slug: string,
             }
         }
     }
@@ -17,8 +20,8 @@ const BlogPage = ({ data }: PageProps<BlogProps>) => {
             <p>My cool posts will go in here</p>
             <ul>
                 {
-                    data.allFile.nodes.map(
-                        node => <li key={node.name}>{node.name}</li>
+                    data.allMdx.nodes.map(
+                        node => <li key={node.frontmatter.title}>{node.frontmatter.title}</li>
                     )
                 }
             </ul>
@@ -28,14 +31,18 @@ const BlogPage = ({ data }: PageProps<BlogProps>) => {
 
 export const query = graphql`
 query {
-    allFile {
+    allMdx {
         nodes {
-            name
+            frontmatter {
+                title
+                datePublished(formatString: "MMMM D, YYYY")
+                author
+                slug
+            }
+            id
         }
     }
 }
 `
-
-
 
 export default BlogPage

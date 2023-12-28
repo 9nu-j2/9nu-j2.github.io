@@ -1,6 +1,17 @@
 export type DataProps = {
     site: {
         siteMetadata: MetaProps
+    },
+    allMdx: {
+        nodes: {
+            frontmatter: {
+                title: string;
+                datePublished: string;
+                author: string;
+                slug: string;
+            },
+            id: string;
+        }
     }
 }
 
