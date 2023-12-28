@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+import path from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -21,9 +22,15 @@ const config: GatsbyConfig = {
     },
     'gatsby-plugin-styled-components',
     {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: `blog`,
+        name: `mdx`,
         path: `${__dirname}/blog`,
       },
     },

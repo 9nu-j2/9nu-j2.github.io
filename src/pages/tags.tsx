@@ -2,7 +2,7 @@ import React from 'react'
 import type { HeadProps } from "gatsby"
 import { PageProps, graphql } from "gatsby"
 import { DataProps } from 'Types/Types'
-import PostHeader from '../Components/Templates/Post.Header'
+import TagsHeader from '../Components/Templates/Tags.Header'
 import Footer from '../Components/Organisms/Footer'
 
 const MainPage = ({ data: { site: {
@@ -12,7 +12,7 @@ const MainPage = ({ data: { site: {
 } } }: PageProps<DataProps>) => {
     return (
         <main>
-            <PostHeader title={title}></PostHeader>
+            <TagsHeader title={title}></TagsHeader>
             <Footer></Footer>
         </main>
     )
@@ -33,6 +33,17 @@ export const query = graphql`
             title
             description
             author
+        }
+    }
+    allMdx {
+        nodes {
+            frontmatter {
+                title
+                datePublished(formatString: "MMMM D, YYYY")
+                author
+                slug
+            }
+            id
         }
     }
 }
