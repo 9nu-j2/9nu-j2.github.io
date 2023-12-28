@@ -28,7 +28,7 @@ const FontStyle = styled.a`
     color: white;
     opacity: 0.8;
     text-decoration: none;
-    text-shadow: 0 0 0.3rem black;
+    text-shadow: 0 0 0.2rem black;
 
     &:hover {
         opacity: 1;
