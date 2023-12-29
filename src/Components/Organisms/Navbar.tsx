@@ -64,7 +64,7 @@ const NavStyle = styled.nav<{ headercolor: string, bottom: string }>`
 const RealNav = styled.div`
     width: 100%;
     height: 40px;
-    max-width: 800px;
+    max-width: 980px;
     display: flex;
     justify-content: space-between;
 `
