@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 import { styled, keyframes } from 'styled-components';
 
 type BlogProps = {
@@ -17,22 +18,35 @@ type BlogProps = {
 
 const LatestContents = ({ allMdx }: BlogProps) => {
     return (
-        <main>
-            <p>My cool posts will go in here</p>
-            <ul>
+        <LatestContainer>
+            <LatestListContainer>
+
                 {
                     allMdx.nodes.map(
                         node => <li key={node.id}>
-                            <h2>{node.frontmatter.title}</h2>
+                            <h2><Link to={`/${node.frontmatter.slug}`}>{node.frontmatter.title}</Link></h2>
                             <p>Published: {node.frontmatter.datePublished}</p>
                             <p></p>
                         </li>
                     )
                 }
-            </ul>
-        </main>
+            </LatestListContainer>
+        </LatestContainer>
     )
 };
+
+const LatestContainer = styled.section`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+`
+
+const LatestListContainer = styled.ul`
+    width: 652px;
+`
 
 
 export default LatestContents;

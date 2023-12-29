@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { Link } from 'gatsby-link';
 
 const ProfileIcons: FunctionComponent = function () {
     return (

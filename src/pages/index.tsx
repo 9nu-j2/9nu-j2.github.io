@@ -4,7 +4,6 @@ import { PageProps, graphql } from "gatsby"
 import HeaderTemplate from "../Components/Templates/Home.Header"
 import Footer from '../Components/Organisms/Footer';
 import { DataProps } from 'Types/Types';
-import styled from 'styled-components';
 import FrontTest from '../Components/Templates/Home.FrontTest';
 import LatestContents from '../Components/Templates/Home.Latest';
 
@@ -14,8 +13,8 @@ const IndexRoute = ({ data: { site: { siteMetadata: {
   return (
     <main>
       <HeaderTemplate title={title} description={description} author={author}></HeaderTemplate>
-      <LatestContents allMdx={allMdx}></LatestContents>
       <FrontTest></FrontTest>
+      <LatestContents allMdx={allMdx}></LatestContents>
       <Footer></Footer>
     </main>
   )
