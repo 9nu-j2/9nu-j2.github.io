@@ -23,7 +23,7 @@ import Footer from '../Components/Organisms/Footer'
 const BlogPost = ({ data, children }) => {
     return (
         <div>
-            <PostHeader title={"아직미정"}></PostHeader>
+            <PostHeader title={data.mdx.frontmatter.title} datePublished={data.mdx.frontmatter.datePublished}></PostHeader>
             <PostBody children={children}></PostBody>
             <Footer></Footer>
         </div>
@@ -38,7 +38,7 @@ query ($id: String) {
     mdx(id: { eq: $id }) {
         frontmatter {
             title
-            datePublished(formatString: "MMMM D, YYYY")
+            datePublished(formatString: "YYYY-MM-D")
             author
             slug
         }

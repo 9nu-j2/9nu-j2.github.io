@@ -2,17 +2,20 @@ import React, { FunctionComponent } from 'react'
 import { styled, keyframes } from 'styled-components';
 import Nav from '../Organisms/Navbar'
 import backg from '../../Statics/2.jpg'
+import AboutPost from '../Organisms/About.Post';
 
 type HProp = {
-    title: string
+    title: string;
+    datePublished: string;
 }
 
-const PostHeader: FunctionComponent<HProp> = function ({ title }) {
+const PostHeader: FunctionComponent<HProp> = function ({ title, datePublished }) {
     return (
         <Header>
             <ImageStyle>
             </ImageStyle>
-            <Nav title={title}></Nav>
+            <Nav title={"아직미정"}></Nav>
+            <AboutPost title={title} datePublished={datePublished} />
         </Header>
     )
 }
@@ -38,7 +41,7 @@ const Header = styled.div`
     display: flex;
     gap: 12px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 `
 
