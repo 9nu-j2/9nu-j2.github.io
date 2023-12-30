@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from "gatsby"
 import { styled, keyframes } from 'styled-components';
+import Drawer from '../Organisms/Drawer';
 
 type BlogProps = {
     allMdx: {
@@ -20,14 +20,11 @@ const LatestContents = ({ allMdx }: BlogProps) => {
     return (
         <LatestContainer>
             <LatestListContainer>
-
                 {
                     allMdx.nodes.map(
-                        node => <li key={node.id}>
-                            <h2><Link to={`/${node.frontmatter.slug}`}>{node.frontmatter.title}</Link></h2>
-                            <p>Published: {node.frontmatter.datePublished}</p>
-                            <p></p>
-                        </li>
+                        node => <LiContainer key={node.id}>
+                            <Drawer title={node.frontmatter.title} date={node.frontmatter.datePublished} link={node.frontmatter.slug}></Drawer>
+                        </LiContainer>
                     )
                 }
             </LatestListContainer>
@@ -46,7 +43,12 @@ const LatestContainer = styled.section`
 
 const LatestListContainer = styled.ul`
     width: 652px;
+    list-style-type: none;
 `
 
+const LiContainer = styled.li`
+    padding:30px 0 0 0;
+    margin:0;
+`
 
 export default LatestContents;
