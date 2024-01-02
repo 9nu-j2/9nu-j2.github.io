@@ -1,52 +1,60 @@
-import React, { FunctionComponent } from 'react'
+import React, { Suspense, FunctionComponent } from 'react'
 import { styled, keyframes } from 'styled-components';
 import Nav from '../Organisms/Navbar';
 import Introduction from '../Organisms/About.Me';
 import { MetaProps } from 'Types/Types';
-import backg from "../../Statics/4.jpeg"
+import { Canvas } from "@react-three/fiber";
 
 
 const HeaderTemplate: FunctionComponent<MetaProps> = function ({ title, description, author }) {
     return (
         <Header>
-            <ImageStyle></ImageStyle>
+            <Container>
+                <Canvas dpr={[1.5, 2]} linear shadows>
+                </Canvas>
+            </Container>
             <Nav title={title}></Nav>
-            <Introduction description={description} author={author}></Introduction>
+            <TitlePart>
+                Jun9 <span style={{ fontSize: '0.4em' }}></span>
+                <br />
+                <span>Blog</span>
+            </TitlePart>
+            {/* <Introduction description={description} author={author}></Introduction> */}
         </Header>
     )
 }
 
-const move = keyframes`
-    from{
-        opacity:0;
-        scale: 1.03;
-    }
-    to{
-        opacity:0.8;
-        scale: 1;
-    }
-`
-
 const Header = styled.div`
     width: 100%;
-    height: 600px;
+    height: 100vh;
     display: flex;
     gap: 12px;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 `
 
-const ImageStyle = styled.div`
+const Container = styled.div`
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -50%, 0%);
     width:100%;
-    height:600px;
+    height: 100vh;
     z-index:-1;
-    background:url(${backg});
-    background-size: cover;
-    animation: ${move} 2s ease-out forwards;
+`
+
+const TitlePart = styled.div`
+    position: absolute;
+    top: 120px;
+    left: 300px;
+    font-weight: 900;
+    font-size: 5em;
+    margin: 0;
+    color: peru;
+    line-height: 0.6em;
+    letter-spacing: -2px;
+    text-align: left;
 `
 
 export default HeaderTemplate

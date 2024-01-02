@@ -4,7 +4,6 @@ import { PageProps, graphql } from "gatsby"
 import HeaderTemplate from "../Components/Templates/Home.Header"
 import Footer from '../Components/Organisms/Footer';
 import { DataProps } from 'Types/Types';
-import FrontTest from '../Components/Templates/Home.FrontTest';
 import LatestContents from '../Components/Templates/Home.Latest';
 
 const IndexRoute = ({ data: { site: { siteMetadata: {
@@ -13,7 +12,6 @@ const IndexRoute = ({ data: { site: { siteMetadata: {
   return (
     <main>
       <HeaderTemplate title={title} description={description} author={author}></HeaderTemplate>
-      <FrontTest></FrontTest>
       <LatestContents allMdx={allMdx}></LatestContents>
       <Footer></Footer>
     </main>
@@ -41,7 +39,7 @@ query{
       nodes {
           frontmatter {
               title
-              datePublished(formatString: "YYYY-MM-D")
+              datePublished(formatString: "YYYY.MM.D")
               author
               slug
           }
