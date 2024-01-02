@@ -19,6 +19,10 @@
   "dependencies": {
     "@mdx-js/mdx": "^3.0.0",
     "@mdx-js/react": "^2.3.0",
+    "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.12",
+    "@react-three/rapier": "^1.2.1",
+    "@tweenjs/tween.js": "^21.0.0",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "babel-plugin-styled-components": "^2.1.4",
@@ -42,7 +46,9 @@
     "react-typography": "^0.16.23",
     "recoil": "^0.7.7",
     "styled-components": "^6.1.1",
-    "typography-theme-github": "^0.16.19"
+    "three": "^0.160.0",
+    "typography-theme-github": "^0.16.19",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
