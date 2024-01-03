@@ -18,8 +18,8 @@ const Context: FunctionComponent<MeProps> = function ({ description, author }) {
 }
 
 const ContextStyle = styled.div`
-    width: 400px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

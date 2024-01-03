@@ -16,12 +16,12 @@ const Introduction: FunctionComponent<MeProps> = function ({ description, author
 }
 
 const IntroBox = styled.div`
-    width: 400px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    padding-bottom: 50px;
 `
 
 export default Introduction

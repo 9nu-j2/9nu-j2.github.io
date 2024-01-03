@@ -26,7 +26,7 @@ const typing = keyframes`
 
 const ProfileStyle = styled.div`
     height: 45px;
-    font-size: 16px;
+    font-size: 12px;
     display: flex;
     flex-direction: row;
     justify-content: center;
