@@ -10,24 +10,12 @@ const ProfileImg: FunctionComponent = function () {
     )
 }
 
-const move = keyframes`
-    from{
-        box-shadow: none;
-        opacity:0;
-    }
-    to{
-        box-shadow: -24px -10px 70px -3px #666666;
-        opacity:1;
-    }
-`
-
 const ProfileStyle = styled.div`
-    width: 160px;
-    height: 160px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: -24px -10px 70px -3px #666666;
-    animation: ${move} 2s ease-out forwards;
+    margin-bottom: 10px;
 `
 
 export default ProfileImg
