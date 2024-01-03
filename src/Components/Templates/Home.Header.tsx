@@ -19,7 +19,7 @@ const HeaderTemplate: FunctionComponent<MetaProps> = function ({ title, descript
                         </group>
                         <Environment preset="city" />
                     </Suspense>
-                    <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
+                    <ContactShadows position={[0, -3.0, 0]} scale={20} blur={2} far={4.5} />
                     <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
                 </Canvas>
             </Container>
