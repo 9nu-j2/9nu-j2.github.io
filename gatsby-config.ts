@@ -38,6 +38,13 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/Statics`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
