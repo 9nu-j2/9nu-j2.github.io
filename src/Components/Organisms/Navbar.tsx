@@ -8,8 +8,6 @@ type TitleData = {
 }
 
 const Nav: FunctionComponent<TitleData> = function ({ title }) {
-    let currentUrl = window.location.pathname;
-
     const [scrollPosition, setScrollPosition] = useState(0);
     const [headerColor, setHeaderColor] = useState("#ffffff");
     const [bottomBorder, setBottomBorder] = useState("transparent");
@@ -26,14 +24,14 @@ const Nav: FunctionComponent<TitleData> = function ({ title }) {
     }, []);
 
     useEffect(() => {
-        if (currentUrl === "/" && scrollPosition < 100) {
+        if (scrollPosition < 100) {
             setHeaderColor("transparent");
             setBottomBorder("none")
         } else {
             setHeaderColor("#ffffff");
             setBottomBorder("#d8d7d7")
         }
-    }, [scrollPosition, currentUrl]);
+    }, [scrollPosition]);
     return (
         <NavStyle headercolor={headerColor} bottom={bottomBorder}>
             <RealNav>
