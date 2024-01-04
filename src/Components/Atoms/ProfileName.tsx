@@ -13,6 +13,7 @@ const ProfileName: FunctionComponent<MeProps> = function ({ author }) {
 
 const ProfileStyle = styled.div`
     height: 20px;
+    width: 320px;
     font-size: 20px;
     font-weight: 700;
     display: flex;

@@ -15,6 +15,7 @@ const ProfileStyle = styled.div`
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
+    margin-top: 10px;
     margin-bottom: 10px;
 `
 

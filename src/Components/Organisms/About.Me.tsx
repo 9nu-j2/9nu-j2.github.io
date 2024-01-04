@@ -22,6 +22,8 @@ const IntroBox = styled.div`
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    background: white;
+    border-radius: 5px;
 `
 
 export default Introduction
