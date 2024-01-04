@@ -35,7 +35,7 @@ query{
             author
         }
     }
-    allMdx(sort: { frontmatter: { datePublished: DESC } }) {
+    allMdx(sort: { frontmatter: { datePublished: DESC } }, limit: 6) {
       nodes {
           frontmatter {
               title

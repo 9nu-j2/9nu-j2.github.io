@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { styled, keyframes } from 'styled-components';
 import Drawer from '../Organisms/Drawer';
 
@@ -17,19 +17,25 @@ type BlogProps = {
 }
 
 const LatestContents = ({ allMdx }: BlogProps) => {
+    const [fullList, setFullList] = useState(3);
+    const onClick = () => {
+        setFullList(fullList + 3)
+    }
     return (
         <LatestContainer>
             <LatestListContainer>
                 <DividerText>최근 게시물</DividerText>
                 {
-                    allMdx.nodes.map(
-                        node => <LiContainer key={node.id}>
-                            <Drawer title={node.frontmatter.title} date={node.frontmatter.datePublished} link={node.frontmatter.slug}></Drawer>
-                        </LiContainer>
+                    allMdx.nodes.slice(0, fullList).map(
+                        (node) => (
+                            <LiContainer key={node.id}>
+                                <Drawer title={node.frontmatter.title} date={node.frontmatter.datePublished} link={node.frontmatter.slug}></Drawer>
+                            </LiContainer>
+                        )
                     )
                 }
                 <MoreContainer>
-                    <button>더보기</button>
+                    {allMdx.nodes.length > fullList ? <ClickDesign onClick={onClick}>더보기</ClickDesign> : <div></div>}
                 </MoreContainer>
             </LatestListContainer>
         </LatestContainer>
@@ -68,6 +74,8 @@ const MoreContainer = styled.div`
     justify-content: center;
 `
 
-
+const ClickDesign = styled.div`
+    
+`
 
 export default LatestContents;
