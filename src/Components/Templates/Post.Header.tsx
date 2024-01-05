@@ -1,18 +1,20 @@
 import React, { FunctionComponent } from 'react'
 import { styled, keyframes } from 'styled-components';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Nav from '../Organisms/Navbar'
 import AboutPost from '../Organisms/About.Post';
 
 type HProp = {
     title: string;
     datePublished: string;
+    data: any;
 }
 
-const PostHeader: FunctionComponent<HProp> = function ({ title, datePublished }) {
+const PostHeader: FunctionComponent<HProp> = function ({ title, datePublished, data }) {
+    const image = getImage(data.mdx.frontmatter.hero_image)
     return (
         <Header>
-            <ImageStyle>
-            </ImageStyle>
+            <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
             <Nav title={"아직미정"}></Nav>
             <AboutPost title={title} datePublished={datePublished} />
         </Header>
