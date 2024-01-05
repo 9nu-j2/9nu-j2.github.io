@@ -8,7 +8,7 @@ import Footer from '../Components/Organisms/Footer'
 const BlogPost = ({ data, children }) => {
     return (
         <div>
-            <PostHeader title={data.mdx.frontmatter.title} datePublished={data.mdx.frontmatter.datePublished}></PostHeader>
+            <PostHeader title={data.mdx.frontmatter.title} datePublished={data.mdx.frontmatter.datePublished} data={data}></PostHeader>
             <PostBody children={children}></PostBody>
             <Footer></Footer>
         </div>
@@ -26,6 +26,14 @@ query ($id: String) {
             datePublished(formatString: "YYYY-MM-D")
             author
             slug
+            hero_image {
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+            hero_image_alt
+            hero_image_credit_link
+            hero_image_credit_text
         }
         id
     }

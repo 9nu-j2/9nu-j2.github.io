@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Footer: FunctionComponent = function () {
     return (
         <FooterStyle>
-            <div>Copyright © 2023, JUN9 All rights reserved.</div>
+            <div>Copyright © 2024, JUN9 All rights reserved.</div>
             <div>Built with <a href="https://www.gatsbyjs.com/">Gatsby</a></div>
         </FooterStyle>
     )

@@ -7,6 +7,7 @@ interface PostBodyProps {
 }
 
 const PostBody = ({ children }: PostBodyProps) => {
+
     return (
         <MDXProvider>
             <Container>
