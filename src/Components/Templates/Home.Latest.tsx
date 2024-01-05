@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { styled, keyframes } from 'styled-components';
 import Drawer from '../Organisms/Drawer';
 
@@ -17,16 +17,12 @@ type BlogProps = {
 }
 
 const LatestContents = ({ allMdx }: BlogProps) => {
-    const [fullList, setFullList] = useState(3);
-    const onClick = () => {
-        setFullList(fullList + 3)
-    }
     return (
         <LatestContainer>
             <LatestListContainer>
                 <DividerText>최근 게시물</DividerText>
                 {
-                    allMdx.nodes.slice(0, fullList).map(
+                    allMdx.nodes.map(
                         (node) => (
                             <LiContainer key={node.id}>
                                 <Drawer title={node.frontmatter.title} date={node.frontmatter.datePublished} link={node.frontmatter.slug}></Drawer>
@@ -34,9 +30,6 @@ const LatestContents = ({ allMdx }: BlogProps) => {
                         )
                     )
                 }
-                <MoreContainer>
-                    {allMdx.nodes.length > fullList ? <ClickDesign onClick={onClick}>더보기</ClickDesign> : <div></div>}
-                </MoreContainer>
             </LatestListContainer>
         </LatestContainer>
     )
@@ -63,19 +56,6 @@ const LiContainer = styled.li`
 
 const DividerText = styled.h3`
     color: #5a5a5a;
-`
-
-const MoreContainer = styled.div`
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
-
-const ClickDesign = styled.div`
-    
 `
 
 export default LatestContents;
