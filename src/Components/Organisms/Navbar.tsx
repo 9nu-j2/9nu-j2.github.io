@@ -26,11 +26,10 @@ const Nav: FunctionComponent<TitleData> = function ({ title }) {
 
     useEffect(() => {
         setVh(window.innerHeight * 0.01);
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-    }, [window.innerHeight]);
+    }, [scrollPosition]);
 
     useEffect(() => {
-        if (scrollPosition < 100 * vh) {
+        if (scrollPosition <= 100 * vh) {
             setHeaderColor("transparent");
             setBottomBorder("none");
         } else {
