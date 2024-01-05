@@ -11,6 +11,7 @@ const Nav: FunctionComponent<TitleData> = function ({ title }) {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [headerColor, setHeaderColor] = useState("#ffffff");
     const [bottomBorder, setBottomBorder] = useState("transparent");
+    const [vh, setVh] = useState(0);
 
     const updateScroll = () => {
         setScrollPosition(window.scrollY || document.documentElement.scrollTop);
@@ -24,12 +25,17 @@ const Nav: FunctionComponent<TitleData> = function ({ title }) {
     }, []);
 
     useEffect(() => {
-        if (scrollPosition < 100) {
+        setVh(window.innerHeight * 0.01);
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }, [window.innerHeight]);
+
+    useEffect(() => {
+        if (scrollPosition < 100 * vh) {
             setHeaderColor("transparent");
-            setBottomBorder("none")
+            setBottomBorder("none");
         } else {
             setHeaderColor("#ffffff");
-            setBottomBorder("#d8d7d7")
+            setBottomBorder("#DFDFDF");
         }
     }, [scrollPosition]);
     return (
@@ -56,7 +62,7 @@ const NavStyle = styled.nav<{ headercolor: string, bottom: string }>`
     border: solid ${(props) => props.bottom};
     border-width: 0 0 1px 0;
     background-color: ${(props) => props.headercolor};
-    transition: background-color 0.2s ease-out;
+    transition: background-color 0.1s ease-out;
 `;
 
 const RealNav = styled.div`
