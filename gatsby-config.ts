@@ -51,8 +51,25 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
+    `gatsby-remark-images`,
+    `gatsby-remark-relative-images`,
   ],
 };
 
