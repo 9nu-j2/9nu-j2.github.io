@@ -25,13 +25,13 @@ const LatestContents = ({ allMdx }: BlogProps) => {
                     allMdx.nodes.map(
                         (node) => (
                             <LiContainer key={node.id}>
-                                <Drawer title={node.frontmatter.title} date={node.frontmatter.datePublished} link={node.frontmatter.slug}></Drawer>
+                                <Drawer title={node.frontmatter.title} date={node.frontmatter.datePublished} link={node.frontmatter.slug} thumnail={node.frontmatter.hero_image} thumnailAlt={node.frontmatter.hero_image_alt}></Drawer>
                             </LiContainer>
                         )
                     )
                 }
             </LatestListContainer>
-        </LatestContainer>
+        </LatestContainer >
     )
 };
 

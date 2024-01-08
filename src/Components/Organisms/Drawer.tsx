@@ -1,12 +1,21 @@
 import React from 'react'
 import { styled, keyframes } from 'styled-components';
 import { Link } from "gatsby"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const Drawer = ({ title, date, link }) => {
+const Drawer = ({ title, date, link, thumnail, thumnailAlt }) => {
+    const image = getImage(thumnail);
+
+    const style = {
+        height: "300px",
+        width: "300px",
+        backgroundColor: "#f2f2f2",
+        borderRadius: "15px",
+    }
     return (
         <Link to={`/${link}`}>
             <CardContainer>
-                <ImageCard></ImageCard>
+                <GatsbyImage image={image} alt={thumnailAlt} style={style} imgStyle={{ overflow: "hidden", objectFit: "cover" }} />
                 <NameCard>
                     <h2>{title}</h2>
                     <p>{date}</p>
@@ -23,16 +32,7 @@ const CardContainer = styled.section`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-`
-
-const ImageCard = styled.div`
-    height:300px;
-    width: 300px;
-    background: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
+    border-color: black;
 `
 
 const NameCard = styled.div`
