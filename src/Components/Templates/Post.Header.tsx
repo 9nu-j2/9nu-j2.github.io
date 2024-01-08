@@ -12,9 +12,10 @@ type HProp = {
 
 const PostHeader: FunctionComponent<HProp> = function ({ title, datePublished, data }) {
     const image = getImage(data.mdx.frontmatter.hero_image)
+
     return (
         <Header>
-            <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
+            <ImageStyle><GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} /></ImageStyle>
             <Nav title={"아직미정"}></Nav>
             <AboutPost title={title} datePublished={datePublished} />
         </Header>
@@ -36,7 +37,7 @@ const ImageStyle = styled.div`
     transform: translate(-50%, -50%, 0%);
     width:100%;
     height: 100vh;
-    z-index:-1;
+    z-index: -1;
 `
 
 export default PostHeader

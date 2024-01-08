@@ -9,9 +9,9 @@ interface PostProps {
 const AboutPost = ({ title, datePublished }: PostProps) => {
     return (
         <Container>
-            <p>{datePublished} 발행됨</p>
+            <PostD>{datePublished} 발행됨</PostD>
             <PostH>{title}</PostH>
-            <p>내용 요약입니다</p>
+            <PostContents>내용 요약입니다</PostContents>
         </Container>
     )
 };
@@ -25,10 +25,19 @@ const Container = styled.div`
     padding-top: 500px;
 `;
 
+const PostD = styled.p`
+    color: white;
+`
+
 const PostH = styled.h1`
     margin:0;
     font-weight: 800;
     font-size: 2.6rem;
+    color: white;
+`
+
+const PostContents = styled.p`
+    color: white;
 `
 
 
