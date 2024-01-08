@@ -26,14 +26,14 @@ query ($id: String) {
             datePublished(formatString: "YYYY-MM-D")
             author
             slug
+            hero_image_alt
+            hero_image_credit_link
+            hero_image_credit_text
             hero_image {
                 childImageSharp {
                     gatsbyImageData
                 }
             }
-            hero_image_alt
-            hero_image_credit_link
-            hero_image_credit_text
         }
         id
     }
