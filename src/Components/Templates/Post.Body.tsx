@@ -9,13 +9,13 @@ interface PostBodyProps {
 const PostBody = ({ children }: PostBodyProps) => {
 
     return (
-        <MDXProvider>
-            <Container>
+        <Container>
+            <MDXProvider>
                 <MdxPart>
                     {children}
                 </MdxPart>
-            </Container>
-        </MDXProvider>
+            </MDXProvider>
+        </Container>
     )
 };
 
@@ -25,6 +25,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-attachment: "fixed";
 `;
 
 const MdxPart = styled.div`

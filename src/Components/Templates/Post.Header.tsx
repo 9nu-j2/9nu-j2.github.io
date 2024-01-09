@@ -10,12 +10,20 @@ type HProp = {
     data: any;
 }
 
+const style = {
+    position: "absolute",
+    zIndex: "-1",
+    width: "100%",
+    height: "100vh",
+    backgroundAttachment: "scroll"
+}
+
 const PostHeader: FunctionComponent<HProp> = function ({ title, datePublished, data }) {
     const image = getImage(data.mdx.frontmatter.hero_image)
 
     return (
         <Header>
-            <ImageStyle><GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} /></ImageStyle>
+            <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} style={style} imgStyle={{ overflow: "hidden", objectFit: "cover" }} />
             <Nav title={"아직미정"}></Nav>
             <AboutPost title={title} datePublished={datePublished} />
         </Header>
@@ -30,14 +38,6 @@ const Header = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-`
-
-const ImageStyle = styled.div`
-    position: absolute;
-    transform: translate(-50%, -50%, 0%);
-    width:100%;
-    height: 100vh;
-    z-index: -1;
 `
 
 export default PostHeader
