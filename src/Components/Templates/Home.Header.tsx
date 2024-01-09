@@ -1,11 +1,10 @@
 import React, { FunctionComponent, Suspense, useEffect, useRef, useState } from 'react'
 import { styled, keyframes } from 'styled-components';
 import Nav from '../Organisms/Navbar';
-
 import { MetaProps } from 'Types/Types';
 import { Canvas } from '@react-three/fiber'
 import { Model } from "../Organisms/3dpea"
-import { Environment, ContactShadows, OrbitControls, Stars } from "@react-three/drei"
+import { Environment, ContactShadows, OrbitControls } from "@react-three/drei"
 
 const HeaderTemplate: FunctionComponent<MetaProps> = function ({ title, description, author }) {
     return (
