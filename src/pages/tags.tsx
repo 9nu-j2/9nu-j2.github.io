@@ -1,18 +1,16 @@
 import React from 'react'
 import type { HeadProps } from "gatsby"
-import { PageProps, graphql } from "gatsby"
-import { DataProps } from 'Types/Types'
+import { Link, PageProps, graphql } from "gatsby"
 import TagsHeader from '../Components/Templates/Tags.Header'
 import Footer from '../Components/Organisms/Footer'
+import { DataProps } from 'Types/Types';
+import TagsList from '../Components/Templates/Tags.List'
 
-const MainPage = ({ data: { site: {
-    siteMetadata: {
-        title
-    }
-} } }: PageProps<DataProps>) => {
+const MainPage = ({ data }: PageProps) => {
     return (
         <main>
-            <TagsHeader title={title}></TagsHeader>
+            <TagsHeader title={data.site.siteMetadata.title}></TagsHeader>
+            <TagsList data={data}></TagsList>
             <Footer></Footer>
         </main>
     )
@@ -27,7 +25,7 @@ export function Head(props: HeadProps<DataProps>) {
 }
 
 export const query = graphql`
-{
+query{
     site {
         siteMetadata {
             title
@@ -36,14 +34,9 @@ export const query = graphql`
         }
     }
     allMdx {
-        nodes {
-            frontmatter {
-                title
-                datePublished(formatString: "MMMM D, YYYY")
-                author
-                slug
-            }
-            id
+        group(field: { frontmatter: { tags: SELECT } }) {
+            fieldValue
+            totalCount
         }
     }
 }
