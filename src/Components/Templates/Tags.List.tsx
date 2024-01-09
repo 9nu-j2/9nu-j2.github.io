@@ -29,7 +29,11 @@ const TagsList = ({ data }: PageProps<TagsPageData>) => {
 };
 
 const Layout = styled.div`
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 `
 
 export default TagsList;
