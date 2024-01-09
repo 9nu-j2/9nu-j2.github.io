@@ -44,9 +44,11 @@ const NameCard = styled.div`
     background: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     color: black;
+    padding-top: 40px;
+    padding-bottom: 50px;
 `
 
 const TimePart = styled.div`
