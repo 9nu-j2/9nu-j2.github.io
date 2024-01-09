@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled, keyframes } from 'styled-components';
 import { Link } from "gatsby"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 
 const Drawer = ({ title, date, link, thumnail, thumnailAlt }) => {
     const image = getImage(thumnail);
@@ -13,12 +13,15 @@ const Drawer = ({ title, date, link, thumnail, thumnailAlt }) => {
         borderRadius: "15px",
     }
     return (
-        <Link to={`/${link}`}>
+        <Link to={`/${link}`} style={{ textDecoration: "none" }}>
             <CardContainer>
                 <GatsbyImage image={image} alt={thumnailAlt} style={style} imgStyle={{ overflow: "hidden", objectFit: "cover" }} />
                 <NameCard>
                     <h2>{title}</h2>
-                    <p>{date}</p>
+                    <TimePart>
+                        <div>{date}</div>
+                        <StaticImage src="../../Statics/Icons/time.png" alt="onTime" style={{ width: "19px", height: "16px" }} imgStyle={{ objectFit: "fill" }} />
+                    </TimePart>
                 </NameCard>
             </CardContainer>
         </Link>
@@ -43,6 +46,16 @@ const NameCard = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    color: black;
+`
+
+const TimePart = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
 `
 
 export default Drawer
