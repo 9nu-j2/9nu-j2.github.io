@@ -15,7 +15,7 @@ const TagsHeader: FunctionComponent = function ({ data }) {
 
 const Header = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     gap: 12px;
     flex-direction: column;
