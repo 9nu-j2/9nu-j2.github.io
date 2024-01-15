@@ -1,16 +1,14 @@
 import React, { FunctionComponent } from 'react'
 import { styled, keyframes } from 'styled-components';
 import Nav from '../Organisms/Navbar'
+import TagsList from '../Organisms/Tags.List'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-type HProp = {
-    title: string
-}
-
-const TagsHeader: FunctionComponent<HProp> = function ({ title }) {
+const TagsHeader: FunctionComponent = function ({ data }) {
     return (
         <Header>
-            <Nav title={title}></Nav>
+            <Nav title={data.site.siteMetadata.title}></Nav>
+            <TagsList data={data}></TagsList>
         </Header>
     )
 }

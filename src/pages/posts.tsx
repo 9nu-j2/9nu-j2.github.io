@@ -4,13 +4,11 @@ import { Link, PageProps, graphql } from "gatsby"
 import TagsHeader from '../Components/Templates/Tags.Header'
 import Footer from '../Components/Organisms/Footer'
 import { DataProps } from 'Types/Types';
-import TagsList from '../Components/Templates/Tags.List'
 
 const MainPage = ({ data }: PageProps) => {
     return (
         <main>
-            <TagsHeader title={data.site.siteMetadata.title}></TagsHeader>
-            <TagsList data={data}></TagsList>
+            <TagsHeader data={data}></TagsHeader>
             {/* 게시글 무한 로딩 */}
             <Footer></Footer>
         </main>

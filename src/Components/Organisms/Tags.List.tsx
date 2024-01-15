@@ -16,24 +16,29 @@ const TagsList = ({ data }: PageProps<TagsPageData>) => {
     return (
         <Layout>
             <h1>tags</h1>
-            <ul>
+            <TagListStyle>
                 {tags.map((tag) => (
                     <li key={tag.fieldValue}>
                         <Link to={`/tags/${tag.fieldValue}/`}>{`${tag.fieldValue}`}</Link>{" "}
                         <small>{`${tag.totalCount}`}</small>
                     </li>
                 ))}
-            </ul>
+            </TagListStyle>
         </Layout>
     );
 };
 
 const Layout = styled.div`
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+`
+
+const TagListStyle = styled.ul`
+    
 `
 
 export default TagsList;
