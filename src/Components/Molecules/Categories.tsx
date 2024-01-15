@@ -7,7 +7,7 @@ const Categories: FunctionComponent = function () {
         <CategoriesPart>
             <Menu context={"Home"} link={"/"}>
             </Menu>
-            <Menu context={"Category"} link={"/tags"}>
+            <Menu context={"Posts"} link={"/posts"}>
             </Menu>
         </CategoriesPart>
     );
