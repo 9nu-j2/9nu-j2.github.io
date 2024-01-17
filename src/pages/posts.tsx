@@ -4,12 +4,13 @@ import { Link, PageProps, graphql } from "gatsby"
 import TagsHeader from '../Components/Templates/Tags.Header'
 import Footer from '../Components/Organisms/Footer'
 import { DataProps } from 'Types/Types';
+import InfiniteScroll from '../Components/Organisms/Infinite.Scroll'
 
 const MainPage = ({ data }: PageProps) => {
     return (
         <main>
             <TagsHeader data={data}></TagsHeader>
-            {/* 게시글 무한 로딩 */}
+            <InfiniteScroll data={data}></InfiniteScroll>
             <Footer></Footer>
         </main>
     )
@@ -36,6 +37,23 @@ query{
         group(field: { frontmatter: { tags: SELECT } }) {
             fieldValue
             totalCount
+        }
+        nodes {
+            frontmatter {
+                title
+                datePublished(formatString: "YYYY.MM.D")
+                author
+                slug
+                hero_image_alt
+                hero_image_credit_link
+                hero_image_credit_text
+                hero_image {
+                    childImageSharp{
+                        gatsbyImageData
+                    }
+                }
+            }
+            id
         }
     }
 }
