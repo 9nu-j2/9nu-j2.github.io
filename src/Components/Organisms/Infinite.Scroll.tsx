@@ -5,12 +5,12 @@ import Drawer from '../Organisms/Drawer';
 
 const InfiniteScroll = ({ data }) => {
     const posts = data.allMdx.nodes
-    const selectedCategory = "dd"
-    const { containerRef } = useInfiniteScroll(selectedCategory, posts)
+    const selectedCategory = "All"
+    const { containerRef, postList } = useInfiniteScroll(selectedCategory, posts)
     return (
         <LatestListContainer ref={containerRef}>
             {
-                data.allMdx.nodes.map(
+                postList.map(
                     (node) => (
                         <LiContainer key={node.id}>
                             <Drawer title={node.frontmatter.title} date={node.frontmatter.datePublished} link={node.frontmatter.slug} thumnail={node.frontmatter.hero_image} thumnailAlt={node.frontmatter.hero_image_alt}></Drawer>
