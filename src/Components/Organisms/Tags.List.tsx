@@ -47,7 +47,7 @@ const TagListStyle = styled.ul`
     grid-auto-flow: dense;
     text-decoration: none;
     margin: 0;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 `
 
 const TagList = styled.li`

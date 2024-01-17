@@ -4,7 +4,7 @@ import Nav from '../Organisms/Navbar'
 import TagsList from '../Organisms/Tags.List'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const TagsHeader: FunctionComponent = function ({ data }) {
+const TagsHeader: FunctionComponent = ({ data }) => {
     return (
         <Header>
             <Nav title={data.site.siteMetadata.title}></Nav>
@@ -15,7 +15,7 @@ const TagsHeader: FunctionComponent = function ({ data }) {
 
 const Header = styled.div`
     width: 100%;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     gap: 12px;
     flex-direction: column;
