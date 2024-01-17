@@ -15,13 +15,12 @@ const TagsList = ({ data }: PageProps<TagsPageData>) => {
     const tags = data.allMdx.group.sort((a, b) => b.totalCount - a.totalCount);
     return (
         <Layout>
-            <h1>tags</h1>
+            <h1>TAGS</h1>
             <TagListStyle>
                 {tags.map((tag) => (
-                    <Link to={`/tags/${tag.fieldValue}/`}>
+                    <Link to={`/tags/${tag.fieldValue}/`} style={{ textDecoration: "none", color: "white" }} >
                         <TagList key={tag.fieldValue}>
-                            {`${tag.fieldValue}`}{" "}<Blank />
-                            <p>{`${tag.totalCount}`}</p>
+                            <Pstyle>{`${tag.fieldValue}`}</Pstyle>
                         </TagList>
                     </Link>
                 ))}
@@ -41,8 +40,14 @@ const Layout = styled.div`
 
 const TagListStyle = styled.ul`
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: repeat(auto-fill,minmax(100px, auto));
+    grid-auto-rows: auto;
+    width: 800px;
+    gap: 10px 10px;
+    grid-auto-flow: dense;
+    text-decoration: none;
+    margin: 0;
+    padding-bottom: 30px;
 `
 
 const TagList = styled.li`
@@ -51,11 +56,19 @@ const TagList = styled.li`
     height: 100%;
     justify-content: center;
     align-items: center;
+    background: #2c4866;
+    border-radius: 5px;
+
+    &:hover {
+        border-color: #2c4866;
+        background: white;
+        border: 1px;
+        color: #2c4866;
+    }
 `
-
-
-const Blank = styled.div`
-    width: 10px;
+const Pstyle = styled.p`
+    padding: 0px;
+    margin: 0px;
 `
 
 export default TagsList;
