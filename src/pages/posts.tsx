@@ -1,6 +1,7 @@
 import React from 'react'
 import type { HeadProps } from "gatsby"
 import { Link, PageProps, graphql } from "gatsby"
+import { RecoilRoot } from 'recoil';
 import TagsHeader from '../Components/Templates/Tags.Header'
 import Footer from '../Components/Organisms/Footer'
 import { DataProps } from 'Types/Types';
@@ -9,9 +10,11 @@ import InfiniteScroll from '../Components/Organisms/Infinite.Scroll'
 const MainPage = ({ data }: PageProps) => {
     return (
         <main>
-            <TagsHeader data={data}></TagsHeader>
-            <InfiniteScroll data={data}></InfiniteScroll>
-            <Footer></Footer>
+            <RecoilRoot>
+                <TagsHeader data={data}></TagsHeader>
+                <InfiniteScroll data={data}></InfiniteScroll>
+                <Footer></Footer>
+            </RecoilRoot>
         </main>
     )
 }

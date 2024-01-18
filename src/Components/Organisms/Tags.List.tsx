@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, PageProps } from "gatsby";
 import { styled, keyframes } from 'styled-components';
-import { useRecoilState, useResetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { selectedCategory } from "../../states/atom";
 
 type TagsPageData = {
@@ -26,7 +26,7 @@ const TagsList = ({ data }: PageProps<TagsPageData>) => {
             <h1>TAGS</h1>
             <TagListStyle>
                 {tags.map((tag) => (
-                    <div onClick={select(tag.fieldValue)} style={{ textDecoration: "none", color: "white" }} >
+                    <div onClick={() => select(tag.fieldValue)} style={{ textDecoration: "none", color: "white", cursor: "pointer" }}>
                         <TagList key={tag.fieldValue}>
                             <Pstyle>{`${tag.fieldValue}`}</Pstyle>
                         </TagList>
