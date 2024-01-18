@@ -1,6 +1,8 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react'
 import { Link, PageProps } from "gatsby";
 import { styled, keyframes } from 'styled-components';
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { selectedCategory } from "../../states/atom";
 
 type TagsPageData = {
     allMdx: {
@@ -13,16 +15,22 @@ type TagsPageData = {
 
 const TagsList = ({ data }: PageProps<TagsPageData>) => {
     const tags = data.allMdx.group.sort((a, b) => b.totalCount - a.totalCount);
+    const [category, setCategory] = useRecoilState(selectedCategory);
+
+    const select = (value: string) => {
+        setCategory(value);
+    }
+
     return (
         <Layout>
             <h1>TAGS</h1>
             <TagListStyle>
                 {tags.map((tag) => (
-                    <Link to={`/tags/${tag.fieldValue}/`} style={{ textDecoration: "none", color: "white" }} >
+                    <div onClick={select(tag.fieldValue)} style={{ textDecoration: "none", color: "white" }} >
                         <TagList key={tag.fieldValue}>
                             <Pstyle>{`${tag.fieldValue}`}</Pstyle>
                         </TagList>
-                    </Link>
+                    </div>
                 ))}
             </TagListStyle>
         </Layout>
@@ -48,6 +56,7 @@ const TagListStyle = styled.ul`
     text-decoration: none;
     margin: 0;
     padding-bottom: 60px;
+    padding-top: 30px;
 `
 
 const TagList = styled.li`
