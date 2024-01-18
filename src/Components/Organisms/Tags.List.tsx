@@ -27,9 +27,14 @@ const TagsList = ({ data }: PageProps<TagsPageData>) => {
             <TagListStyle>
                 {tags.map((tag) => (
                     <div onClick={() => select(tag.fieldValue)} style={{ textDecoration: "none", color: "white", cursor: "pointer" }}>
-                        <TagList key={tag.fieldValue}>
-                            <Pstyle>{`${tag.fieldValue}`}</Pstyle>
-                        </TagList>
+                        {category === tag.fieldValue ?
+                            (<TagListReverse key={tag.fieldValue}>
+                                <Pstyle>{`${tag.fieldValue}`}</Pstyle>
+                            </TagListReverse>) :
+                            (<TagList key={tag.fieldValue}>
+                                <Pstyle>{`${tag.fieldValue}`}</Pstyle>
+                            </TagList>)
+                        }
                     </div>
                 ))}
             </TagListStyle>
@@ -75,6 +80,21 @@ const TagList = styled.li`
         color: #2c4866;
     }
 `
+
+const TagListReverse = styled.li`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: #2c4866;
+    border: 1.5px;
+    border-style:solid;
+    border-color: #2c4866;
+    border-radius: 5px;
+`
+
 const Pstyle = styled.p`
     padding: 0px;
     margin: 0px;
