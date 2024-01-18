@@ -8,7 +8,6 @@ import Drawer from '../Organisms/Drawer';
 const InfiniteScroll = ({ data }) => {
     const posts = data.allMdx.nodes
     const [category, setCategory] = useRecoilState(selectedCategory);
-    // const category = "All"
     const { containerRef, postList } = useInfiniteScroll(category, posts)
     return (
         <LatestListContainer ref={containerRef}>
