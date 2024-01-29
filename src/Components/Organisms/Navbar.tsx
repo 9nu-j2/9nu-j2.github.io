@@ -3,13 +3,11 @@ import styled from 'styled-components';
 import Title from '../Atoms/Blog.title';
 import Categories from '../Molecules/Categories';
 
-type TitleData = {
-    title: string
-}
 
-const Nav: FunctionComponent<TitleData> = function ({ title }) {
+const Nav: FunctionComponent = function () {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [headerColor, setHeaderColor] = useState("#ffffff");
+    const [logoType, setLogoType] = useState(true);
     const [bottomBorder, setBottomBorder] = useState("transparent");
     const [vh, setVh] = useState(0);
 
@@ -32,15 +30,17 @@ const Nav: FunctionComponent<TitleData> = function ({ title }) {
         if (scrollPosition <= 100 * vh) {
             setHeaderColor("transparent");
             setBottomBorder("none");
+            setLogoType(true);
         } else {
             setHeaderColor("#ffffff");
             setBottomBorder("#DFDFDF");
+            setLogoType(false);
         }
     }, [scrollPosition]);
     return (
         <NavStyle headercolor={headerColor} bottom={bottomBorder}>
             <RealNav>
-                <Title title={title}></Title>
+                <Title title={logoType}></Title>
                 <Categories></Categories>
             </RealNav>
         </NavStyle>

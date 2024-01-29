@@ -11,7 +11,7 @@ const IndexRoute = ({ data: { site: { siteMetadata: {
 } }, allMdx } }: PageProps<DataProps>) => {
   return (
     <main>
-      <HeaderTemplate title={title} description={description} author={author}></HeaderTemplate>
+      <HeaderTemplate description={description} author={author}></HeaderTemplate>
       <LatestContents allMdx={allMdx}></LatestContents>
       <Footer></Footer>
     </main>
