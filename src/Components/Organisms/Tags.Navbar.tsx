@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Title from '../Atoms/Blog.title';
 import Categories from '../Molecules/Categories';
 
-
 const Nav: FunctionComponent = function () {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [headerColor, setHeaderColor] = useState("#ffffff");
