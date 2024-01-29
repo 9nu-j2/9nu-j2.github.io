@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import logo1 from '../../Statics/Icons/logo1.svg'
+import logo2 from '../../Statics/Icons/logo2.svg'
 
 type TitleData = {
     title: boolean
@@ -11,8 +13,10 @@ const Title: FunctionComponent<TitleData> = function ({ title }) {
         <Blogtitle>
             <a href="/">
                 {title == true ?
-                    <StaticImage src="../../Statics/Icons/logo1.svg" alt="logoUS" width={185} height={35} />
-                    : <StaticImage src="../../Statics/Icons/logo2.svg" alt="logoS" width={185} height={35} />}</a>
+                    <TitleLogo src={logo1} />
+                    : <TitleLogo src={logo2} />
+                }
+            </a>
         </Blogtitle>
     )
 }
@@ -22,6 +26,12 @@ const Blogtitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`
+
+const TitleLogo = styled.img`
+    width: 185px;
+    height: 35px;
+    margin:0;
 `
 
 export default Title
