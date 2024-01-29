@@ -6,7 +6,7 @@ import { Canvas } from '@react-three/fiber'
 import { Model } from "../Organisms/3dpea"
 import { Environment, ContactShadows, OrbitControls } from "@react-three/drei"
 
-const HeaderTemplate: FunctionComponent<MetaProps> = function ({ title, description, author }) {
+const HeaderTemplate: FunctionComponent<MetaProps> = function ({ description, author }) {
     return (
         <Header>
             <Container>
@@ -23,7 +23,7 @@ const HeaderTemplate: FunctionComponent<MetaProps> = function ({ title, descript
                     <Environment preset="city" />
                 </Canvas>
             </Container>
-            <Nav title={title}></Nav>
+            <Nav></Nav>
             <TitlePart>
                 Welcome<span style={{ fontSize: '0.4em' }}></span>
                 <br />

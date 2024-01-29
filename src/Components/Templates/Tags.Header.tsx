@@ -1,13 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import { styled, keyframes } from 'styled-components';
-import Nav from '../Organisms/Navbar'
+import Nav from '../Organisms/Tags.Navbar'
 import TagsList from '../Organisms/Tags.List'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const TagsHeader: FunctionComponent = ({ data }) => {
     return (
         <Header>
-            <Nav title={data.site.siteMetadata.title}></Nav>
+            <Nav></Nav>
             <TagsList data={data}></TagsList>
         </Header>
     )
