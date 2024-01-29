@@ -17,9 +17,9 @@ const Drawer = ({ title, date, link, thumnail, thumnailAlt }) => {
             <CardContainer>
                 <GatsbyImage image={image} alt={thumnailAlt} style={style} imgStyle={{ overflow: "hidden", objectFit: "cover" }} />
                 <NameCard>
-                    <h2>{title}</h2>
+                    <TitleStyle>{title}</TitleStyle>
                     <TimePart>
-                        <div>{date}</div>
+                        <DateStyle>{date}</DateStyle>
                         <StaticImage src="../../Statics/Icons/time.png" alt="onTime" style={{ width: "19px", height: "16px" }} imgStyle={{ objectFit: "fill" }} />
                     </TimePart>
                 </NameCard>
@@ -35,7 +35,6 @@ const CardContainer = styled.section`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-color: black;
 `
 
 const NameCard = styled.div`
@@ -49,6 +48,11 @@ const NameCard = styled.div`
     color: black;
     padding-top: 40px;
     padding-bottom: 50px;
+    border-radius: 15px;
+
+    ${CardContainer}:hover & {
+        
+    }
 `
 
 const TimePart = styled.div`
@@ -58,6 +62,22 @@ const TimePart = styled.div`
     align-items: center;
     width: 100%;
     gap: 8px;
+
+    ${CardContainer}:hover & {
+        
+    }
+`
+
+const TitleStyle = styled.h2`
+    ${CardContainer}:hover & {
+        
+    }
+`
+
+const DateStyle = styled.div`
+    ${CardContainer}:hover & {
+        
+    }
 `
 
 export default Drawer
