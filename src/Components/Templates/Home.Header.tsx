@@ -25,7 +25,7 @@ const HeaderTemplate: FunctionComponent<MetaProps> = function ({ description, au
             </Container>
             <Nav></Nav>
             <TitlePart>
-                Welcome<span style={{ fontSize: '0.4em' }}></span>
+                Moderator<span style={{ fontSize: '0.4em' }}></span>
                 <br />
                 Jun9's<span></span>
             </TitlePart>
