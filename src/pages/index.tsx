@@ -7,7 +7,7 @@ import { DataProps } from 'Types/Types';
 import LatestContents from '../Components/Templates/Home.Latest';
 
 const IndexRoute = ({ data: { site: { siteMetadata: {
-  title, description, author
+  description, author
 } }, allMdx } }: PageProps<DataProps>) => {
   return (
     <main>

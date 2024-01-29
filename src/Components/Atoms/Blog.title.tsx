@@ -11,8 +11,8 @@ const Title: FunctionComponent<TitleData> = function ({ title }) {
         <Blogtitle>
             <a href="/">
                 {title == true ?
-                    <StaticImage src="../../Statics/Icons/logo1.png" alt="Gmail" width={185} height={35} />
-                    : <StaticImage src="../../Statics/Icons/logo2.png" alt="Gmail" width={185} height={35} />}</a>
+                    <StaticImage src="../../Statics/Icons/logo1.svg" alt="logoUS" width={185} height={35} />
+                    : <StaticImage src="../../Statics/Icons/logo2.svg" alt="logoS" width={185} height={35} />}</a>
         </Blogtitle>
     )
 }
