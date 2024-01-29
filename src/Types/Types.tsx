@@ -16,7 +16,6 @@ export type DataProps = {
 }
 
 export type MetaProps = {
-    title: string,
     description: string,
     author: string,
 }
