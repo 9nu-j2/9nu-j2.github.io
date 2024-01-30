@@ -23,14 +23,14 @@ const Title: FunctionComponent<TitleData> = function ({ title }) {
 
 const Blogtitle = styled.div`
     width: 200px;
-    height: 35px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 `
 const TitleLink = styled.a`
     width: 183px;
-    height: 35px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ const TitleLink = styled.a`
 
 const TitleLogo = styled.img`
     width: 183px;
-    height: 35px;
+    height: 40px;
     margin:0;
 `
 
