@@ -23,6 +23,7 @@ const Title: FunctionComponent<TitleData> = function ({ title }) {
 
 const Blogtitle = styled.div`
     width: 200px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;

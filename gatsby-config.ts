@@ -68,7 +68,13 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-remark-images`,
+    {
+      resolve: 'gatsby-remark-images',
+      options: {
+        maxWidth: 800,
+        backgroundColor: 'none',
+      },
+    },
     `gatsby-remark-relative-images`,
   ],
 };
