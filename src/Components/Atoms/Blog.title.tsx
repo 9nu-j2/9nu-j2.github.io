@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react'
-import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import logo1 from '../../Statics/Icons/logo1.svg'
 import logo2 from '../../Statics/Icons/logo2.svg'
