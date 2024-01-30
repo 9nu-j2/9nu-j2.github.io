@@ -11,12 +11,12 @@ type TitleData = {
 const Title: FunctionComponent<TitleData> = function ({ title }) {
     return (
         <Blogtitle>
-            <a href="/">
+            <TitleLink href="/">
                 {title == true ?
                     <TitleLogo src={logo1} />
                     : <TitleLogo src={logo2} />
                 }
-            </a>
+            </TitleLink>
         </Blogtitle>
     )
 }
@@ -28,9 +28,16 @@ const Blogtitle = styled.div`
     justify-content: center;
     align-items: center;
 `
+const TitleLink = styled.a`
+    width: 183px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
 const TitleLogo = styled.img`
-    width: 185px;
+    width: 183px;
     height: 35px;
     margin:0;
 `
