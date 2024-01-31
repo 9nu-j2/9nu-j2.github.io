@@ -20,6 +20,12 @@ const config: GatsbyConfig = {
         allExtensions: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: './src/Statics/Icons/icon.svg',
+      },
+    },
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-mdx',
