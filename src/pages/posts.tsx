@@ -23,7 +23,7 @@ export default MainPage
 
 export function Head(props: HeadProps<DataProps>) {
     return (
-        <title>{props.data.site.siteMetadata.author}</title>
+        <title>Moderator {props.data.site.siteMetadata.author}의 문제해결기록용 블로그</title>
     )
 }
 
