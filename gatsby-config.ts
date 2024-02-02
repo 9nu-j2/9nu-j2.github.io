@@ -34,6 +34,15 @@ const config: GatsbyConfig = {
           default: path.resolve('./src/Components/Templates/Post.tsx'),
         },
         extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              showCaptions: true,
+            },
+          },
+        ],
       },
     },
     {
@@ -83,8 +92,6 @@ const config: GatsbyConfig = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
-              backgroundColor: 'none',
-              showCaptions: true,
             },
           },
         ],
