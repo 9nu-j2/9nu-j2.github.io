@@ -26,7 +26,7 @@ const PostHeader: FunctionComponent<HProp> = function ({ title, datePublished, d
         <Header>
             <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} style={style} imgStyle={{ overflow: "hidden", objectFit: "cover" }} />
             <Nav></Nav>
-            <AboutPost title={title} datePublished={datePublished} />
+            <AboutPost title={title} datePublished={datePublished} summary={data.mdx.frontmatter.summary} />
         </Header>
     )
 };

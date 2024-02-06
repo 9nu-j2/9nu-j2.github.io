@@ -5,14 +5,15 @@ import { StaticImage } from 'gatsby-plugin-image';
 interface PostProps {
     title: string;
     datePublished: string;
+    summary: string;
 }
 
-const AboutPost = ({ title, datePublished }: PostProps) => {
+const AboutPost = ({ title, datePublished, summary }: PostProps) => {
     return (
         <Container>
             <PostD><div>{datePublished}</div><StaticImage src="../../Statics/Icons/time.png" alt="onTime" width={21} /></PostD>
             <PostH>{title}</PostH>
-            <PostContents>내용 요약입니다</PostContents>
+            <PostContents>{summary}</PostContents>
         </Container>
     )
 };
