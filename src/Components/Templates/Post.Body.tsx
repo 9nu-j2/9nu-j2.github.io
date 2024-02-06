@@ -29,7 +29,7 @@ const Container = styled.div`
 `;
 
 const MdxPart = styled.div`
-    width: 652px;
+    width: 700px;
     padding-top: 170px;
     padding-bottom: 100px;
 `
