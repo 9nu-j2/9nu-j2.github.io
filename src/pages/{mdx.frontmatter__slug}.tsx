@@ -34,6 +34,7 @@ query ($id: String) {
                     gatsbyImageData
                 }
             }
+            summary
         }
         id
     }
