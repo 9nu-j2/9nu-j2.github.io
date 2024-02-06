@@ -24,7 +24,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     padding-bottom: 150px;
 `;

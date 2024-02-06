@@ -15,7 +15,8 @@ const style = {
     zIndex: "-1",
     width: "100%",
     height: "100vh",
-    backgroundAttachment: "scroll"
+    backgroundAttachment: "scroll",
+    filter: "brightness(0.67)"
 }
 
 const PostHeader: FunctionComponent<HProp> = function ({ title, datePublished, data }) {
