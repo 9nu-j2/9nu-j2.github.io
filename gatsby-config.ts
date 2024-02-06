@@ -89,6 +89,12 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-DQVMYXVSDZ'],
+      },
+    },
   ],
 };
 
