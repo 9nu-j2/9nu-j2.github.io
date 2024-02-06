@@ -35,11 +35,15 @@ const config: GatsbyConfig = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 400,
               showCaptions: ['title', 'alt'],
-              quality: 100,
-              wrapperStyle: 'margin: 0 0;',
+              quality: 50,
+              wrapperStyle: 'margin: 0 0; aspect-ratio: auto;',
+              srcSetBreakpoints: [100, 200, 300, 400],
             },
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
           },
         ],
         mdxOptions: {
