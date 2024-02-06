@@ -50,6 +50,7 @@
     "react-dom": "^18.2.0",
     "react-typography": "^0.16.23",
     "recoil": "^0.7.7",
+    "remark-gfm": "^1.0.0",
     "styled-components": "^6.1.1",
     "three": "^0.160.0",
     "typography-theme-github": "^0.16.19",

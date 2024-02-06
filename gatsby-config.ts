@@ -34,8 +34,17 @@ const config: GatsbyConfig = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              showCaptions: ['title', 'alt'],
+              quality: 100,
+              wrapperStyle: 'margin: 0 0;',
+            },
           },
         ],
+        mdxOptions: {
+          remarkPlugins: [require('remark-gfm')],
+        },
       },
     },
     {
