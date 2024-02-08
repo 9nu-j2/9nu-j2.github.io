@@ -37,10 +37,10 @@ const config: GatsbyConfig = {
             options: {
               maxWidth: 500,
               showCaptions: ['title', 'alt'],
-              quality: 50,
+              quality: 100,
               wrapperStyle:
-                'display; block; margin: 0 auto; aspect-ratio: auto;',
-              srcSetBreakpoints: [200, 300, 400, 500],
+                'display; block; min-height: 0; margin: 0 auto; aspect-ratio: auto;',
+              srcSetBreakpoints: [200, 300, 400, 500, 600, 700],
             },
           },
           {
