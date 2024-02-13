@@ -38,8 +38,7 @@ const config: GatsbyConfig = {
               maxWidth: 500,
               showCaptions: ['title', 'alt'],
               quality: 100,
-              wrapperStyle:
-                'display; block; min-height: 0; margin: 0 auto; aspect-ratio: auto;',
+              wrapperStyle: 'display; block; min-height: 0; margin: 0 auto;',
               srcSetBreakpoints: [200, 300, 400, 500, 600, 700],
             },
           },
