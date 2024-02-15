@@ -56,6 +56,7 @@ query{
                         gatsbyImageData
                     }
                 }
+                series
             }
             id
         }
